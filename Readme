@@ -1,0 +1,23 @@
+
+計算機功能：
+
+    利用lab10已經寫好的code，基本上沒什麼更動
+
+client：
+
+    輸入ip按下按鈕後，建立socket連向server，並創立printwriter
+    之後利用printwriter，在按下運算button的時候傳送訊息給server。
+    由於server不會傳訊息回來，因此不需建立Thread來接收server訊息
+
+server：
+
+    建立serversocket不斷接受連線，並創立socket。
+    另外新增ConnectionThread class利用他來不斷聽取Client的訊息
+
+    設有threadPool可同時聽取多個Client
+    除此之外，每個Client根據連線先後順序都有一個id
+
+    將結果印在JTextArea，能夠查看之前client的訊息而不會被蓋掉
+    各個Client都有id，可以清楚知道是誰的result
+
+    且有捲軸可滑動，增加便利性
